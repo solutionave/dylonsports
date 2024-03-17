@@ -2,6 +2,7 @@ import clsx from "clsx";
 import React, { FC } from "react";
 import { GrNext } from "react-icons/gr";
 import { BsTelephone } from "react-icons/bs";
+import { SiteName } from "../shared/contants";
 
 interface Props {}
 
@@ -10,7 +11,7 @@ const Navbar: FC<Props> = ({}) => {
     <div className="px-3 py-1 flex flex-row items-center gap-6 border-b-[0.5px] border-b-gray-600">
       <div className="border-r border-r-gray-600 pr-4">
         <span className="text-2xl font-bold italic text-red-500 m-0 p-0 block">
-          Dylon Sports
+          {SiteName}
         </span>
         <span className="italic text-base">Your choice</span>
       </div>

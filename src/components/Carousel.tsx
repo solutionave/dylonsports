@@ -1,11 +1,8 @@
 import clsx from "clsx";
 import React, { useEffect, useState } from "react";
+import { CarouselImages } from "../shared/contants";
 
 const Carousel = () => {
-  const Images = [
-    "https://source.unsplash.com/Qh9Swf_8DyA",
-    "https://source.unsplash.com/O453M2Liufs",
-  ];
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   useEffect(() => {
@@ -15,7 +12,7 @@ const Carousel = () => {
       carousel.setAttribute("style", "opacity:0");
 
       setTimeout(() => {
-        if (activeImageIndex < Images.length - 1) {
+        if (activeImageIndex < CarouselImages.length - 1) {
           setActiveImageIndex(activeImageIndex + 1);
         } else {
           setActiveImageIndex(0);
@@ -32,26 +29,23 @@ const Carousel = () => {
   }, [activeImageIndex]);
 
   return (
-    <div>
-      <div>{activeImageIndex}</div>
-      <div className="min-h-[60vh] bg-black relative flex items-center justify-center">
-        <img
-          id="carouselImage"
-          src={Images[activeImageIndex]}
-          alt=""
-          className={clsx([
-            "object-cover object-center min-w-[80%] h-[60vh]",
-            "transition-all duration-500",
-          ])}
-        />
-        <div
-          className={clsx([
-            "absolute left-0 right-0 h-full",
-            "flex items-center justify-center",
-            "bg-gradient-to-r from-black via-transparent  to-black",
-          ])}
-        />
-      </div>
+    <div className="min-h-[60vh] bg-black relative flex items-center justify-center">
+      <img
+        id="carouselImage"
+        src={CarouselImages[activeImageIndex]}
+        alt=""
+        className={clsx([
+          "object-cover object-center min-w-[80%] h-[60vh]",
+          "transition-all duration-500",
+        ])}
+      />
+      <div
+        className={clsx([
+          "absolute left-0 right-0 h-full",
+          "flex items-center justify-center",
+          "bg-gradient-to-r from-black via-transparent  to-black",
+        ])}
+      />
     </div>
   );
 };
