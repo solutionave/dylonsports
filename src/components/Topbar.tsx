@@ -14,11 +14,11 @@ const Topbar = () => {
 
   return (
     <div className="flex justify-end gap-4 items-center p-5 border-b border-b-gray-600">
-      <div className={clsx(["flex items-center gap-2", linkStyles])}>
-        <IoMailOutline size={20} color="red" />
-        <span className="text-md font-light tracking-wide">
+      <div className={clsx(["flex items-center gap-2 group", linkStyles])}>
+        <IoMailOutline size={20} className="group-hover:fill-red-600" />
+        <a className="text-md font-light tracking-wide group-hover:fill-red-600">
           dylonsports@gmail.com
-        </span>
+        </a>
       </div>
       <div className="h-5 w-[0.5px] bg-gray-600 mx-6" />
       <div className="flex items-center gap-4">
