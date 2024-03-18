@@ -2,7 +2,10 @@ import React from "react";
 import PageLayout from "../layouts/PageLayout";
 import Container from "../components/Container";
 import { MdLocationPin } from "react-icons/md";
+import GoogleMapReact from "google-map-react";
 import clsx from "clsx";
+
+const MapMarker = ({ text }: any) => <div>{text}</div>;
 
 const ContactUsPage = () => {
   const boxStyle = clsx([
@@ -11,6 +14,14 @@ const ContactUsPage = () => {
     "transition-all duration-500",
     "hover:scale-95 cursor-pointer",
   ]);
+
+  const defaultProps = {
+    center: {
+      lat: 10.99835602,
+      lng: 77.01502627,
+    },
+    zoom: 11,
+  };
 
   return (
     <PageLayout>
@@ -61,6 +72,15 @@ const ContactUsPage = () => {
           </div>
           <div className="my-3">Our hotline is open 24/7</div>
         </Container>
+        <div className="h-[50vh] w-full relative">
+          <GoogleMapReact
+            bootstrapURLKeys={{ key: "" }}
+            defaultCenter={defaultProps.center}
+            defaultZoom={defaultProps.zoom}
+          >
+            <MapMarker lat={59.955413} lng={30.337844} text="My Marker" />
+          </GoogleMapReact>
+        </div>
       </div>
     </PageLayout>
   );
