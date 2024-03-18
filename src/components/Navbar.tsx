@@ -3,6 +3,7 @@ import React, { FC } from "react";
 import { GrNext } from "react-icons/gr";
 import { BsTelephone } from "react-icons/bs";
 import { SiteName } from "../shared/contants";
+import { Link } from "gatsby";
 
 interface Props {}
 
@@ -16,11 +17,17 @@ const Navbar: FC<Props> = ({}) => {
         <span className="italic text-base">Your choice</span>
       </div>
       <div className="flex-1 flex gap-5 font-semibold">
-        <div className="hover:text-red-600 cursor-pointer">Home</div>
-        <div className="hover:text-red-600 cursor-pointer">About Us</div>
+        <Link to="/">
+          <div className="hover:text-red-600 cursor-pointer">Home</div>
+        </Link>
+        <Link to="/aboutus">
+          <div className="hover:text-red-600 cursor-pointer">About Us</div>
+        </Link>
         <div className="hover:text-red-600 cursor-pointer">Our Products</div>
         <div className="hover:text-red-600 cursor-pointer">Production tour</div>
-        <div className="hover:text-red-600 cursor-pointer">Contact Us</div>
+        <Link to="/contactus">
+          <div className="hover:text-red-600 cursor-pointer">Contact Us</div>
+        </Link>
       </div>
       <div
         className={clsx([
