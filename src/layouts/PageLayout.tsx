@@ -13,6 +13,7 @@ const PageLayout: FC<Props> = ({ children }) => {
       <Topbar />
       <Navbar />
       {children}
+      <div className="h-[400pt]" />
     </div>
   );
 };
