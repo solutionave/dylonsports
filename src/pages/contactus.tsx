@@ -70,7 +70,7 @@ const ContactUsPage = () => {
               </div>
             </div>
           </div>
-          <div className="my-3">Our hotline is open 24/7</div>
+          <div className="my-20">Our hotline is open 24/7</div>
         </Container>
         <div className="h-[50vh] w-full relative">
           <GoogleMapReact
@@ -80,6 +80,47 @@ const ContactUsPage = () => {
           >
             <MapMarker lat={59.955413} lng={30.337844} text="My Marker" />
           </GoogleMapReact>
+          <form
+            className={clsx([
+              "bg-white flex flex-col absolute p-10 min-w-[350pt] gap-3",
+              "absolute bottom-10 right-[20%] shadow-2xl border",
+              "rounded-md",
+            ])}
+          >
+            <div>
+              <div className="text-2xl font-semibold">Write to us</div>
+              <div>Tell what you have in mind</div>
+            </div>
+            <input
+              className="border px-3 py-2 rounded-md w-full"
+              type="text"
+              placeholder="Full Name"
+            />
+            <input
+              className="border px-3 py-2 rounded-md w-full"
+              type="text"
+              placeholder="Email Address"
+            />
+            <input
+              className="border px-3 py-2 rounded-md w-full"
+              type="text"
+              placeholder="Phone No"
+            />
+            <input
+              className="border px-3 py-2 rounded-md w-full"
+              type="text"
+              placeholder="Write Message"
+            />
+            <button
+              type="submit"
+              className={clsx([
+                "bg-red-600 text-white border-0 py-2 rounded-md",
+                "hover:bg-opacity-80 transition-all duration-300",
+              ])}
+            >
+              Send Message
+            </button>
+          </form>
         </div>
       </div>
     </PageLayout>
